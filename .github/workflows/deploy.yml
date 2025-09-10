@@ -1,17 +1,56 @@
-name: Retrain and Deploy
-on: [push]
+name: Deploy Model
+
+on:
+  push:
+    branches:
+      - main   # Runs whenever you push to the main branch
+  workflow_dispatch:  # Allow manual trigger from Actions tab
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write   # ✅ Allow pushing back to repo
+
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with: { python-version: '3.9' }
-    - run: pip install -r requirements.txt
-    - run: python train.py
-    - run: git config --global user.name "GitHub Action"
-    - run: git config --global user.email "action@github.com"
-    - run: git add titanic_model.pkl le_sex.pkl le_embarked.pkl
-    - run: git commit -m "Update model" || echo "No changes"
-    - run: git push
+      # 1. Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # 4. Run training script
+      - name: Train the model
+        run: python train.py
+
+      # 5. Configure Git with your details
+      - name: Configure git
+        run: |
+          git config user.name "Prasad Jadhav"
+          git config user.email "prasadmjadhav6959@gmail.com"
+
+      # 6. Add model artifacts (change file names if needed)
+      - name: Add model files
+        run: |
+          git add titanic_model.pkl le_sex.pkl le_embarked.pkl || echo "No model files to add"
+
+      # 7. Commit changes
+      - name: Commit changes
+        run: |
+          git commit -m "Update trained model artifacts" || echo "No changes to commit"
+
+      # 8. Push changes back to GitHub repo
+      - name: Push changes
+        run: |
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/prasadmjadhav6959/titanic-streamlit.git HEAD:main
