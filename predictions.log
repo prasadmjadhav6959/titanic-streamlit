@@ -1,0 +1,10 @@
+INFO:root:Input: {'Pclass': {0: 1}, 'Sex': {0: 1}, 'Age': {0: 30}, 'SibSp': {0: 0}, 'Parch': {0: 0}, 'Fare': {0: 50.0}, 'Embarked': {0: 0}}, Prediction: Did Not Survive
+INFO:root:Input: {'Pclass': {0: 1}, 'Sex': {0: 1}, 'Age': {0: 30}, 'SibSp': {0: 0}, 'Parch': {0: 0}, 'Fare': {0: 50.0}, 'Embarked': {0: 0}}, Prediction: Did Not Survive
+INFO:root:Input: {'Pclass': {0: 1}, 'Sex': {0: 1}, 'Age': {0: 17}, 'SibSp': {0: 0}, 'Parch': {0: 0}, 'Fare': {0: 50.0}, 'Embarked': {0: 0}}, Prediction: Survived
+INFO:root:Input: {'Pclass': {0: 1}, 'Sex': {0: 1}, 'Age': {0: 30}, 'SibSp': {0: 0}, 'Parch': {0: 0}, 'Fare': {0: 50.0}, 'Embarked': {0: 0}}, Prediction: Did Not Survive
+INFO:root:Input: {'Pclass': {0: 1}, 'Sex': {0: 1}, 'Age': {0: 30}, 'SibSp': {0: 0}, 'Parch': {0: 0}, 'Fare': {0: 50.0}, 'Embarked': {0: 0}}, Prediction: Did Not Survive
+INFO:root:Input: {'Pclass': {0: 1}, 'Sex': {0: 1}, 'Age': {0: 30}, 'SibSp': {0: 0}, 'Parch': {0: 0}, 'Fare': {0: 50.0}, 'Embarked': {0: 0}}, Prediction: Did Not Survive
+INFO:root:Input: {'Pclass': {0: 1}, 'Sex': {0: 1}, 'Age': {0: 30}, 'SibSp': {0: 0}, 'Parch': {0: 0}, 'Fare': {0: 50.0}, 'Embarked': {0: 1}}, Prediction: Did Not Survive
+INFO:root:Input: {'Pclass': {0: 3}, 'Sex': {0: 1}, 'Age': {0: 30}, 'SibSp': {0: 0}, 'Parch': {0: 0}, 'Fare': {0: 50.0}, 'Embarked': {0: 1}}, Prediction: Did Not Survive
+INFO:root:Input: {'Pclass': {0: 3}, 'Sex': {0: 1}, 'Age': {0: 19}, 'SibSp': {0: 0}, 'Parch': {0: 0}, 'Fare': {0: 50.0}, 'Embarked': {0: 1}}, Prediction: Did Not Survive
+INFO:root:Input: {'Pclass': {0: 3}, 'Sex': {0: 0}, 'Age': {0: 11}, 'SibSp': {0: 0}, 'Parch': {0: 0}, 'Fare': {0: 50.0}, 'Embarked': {0: 1}}, Prediction: Survived
