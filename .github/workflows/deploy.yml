@@ -1,0 +1,17 @@
+name: Retrain and Deploy
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with: { python-version: '3.9' }
+    - run: pip install -r requirements.txt
+    - run: python train.py
+    - run: git config --global user.name "GitHub Action"
+    - run: git config --global user.email "action@github.com"
+    - run: git add titanic_model.pkl le_sex.pkl le_embarked.pkl
+    - run: git commit -m "Update model" || echo "No changes"
+    - run: git push
